@@ -13,8 +13,12 @@ $passowrt= "";
 
 try {
     
-$mysql_connect=new PDO("mysql:host=$loal_server,$passowrt, $user_name)
+$mysql_connect=new PDO("mysql:host=$loal_server;dbname=db_smile_mobile",$passowrt, $user_name);
+$mysql_connect->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+echo 'Connection successfully';
     
-} catch (Exception $ex) {
-    
+} catch (PDOException $ex) {
+    echo "Connection Failed".$ex->getMessage();
+
+    $mysql_connect=NULL;
 }
