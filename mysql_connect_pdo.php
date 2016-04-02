@@ -22,3 +22,17 @@ echo 'Connection successfully';
 
     $mysql_connect=NULL;
 }
+
+class person{
+   
+   var $name; // The data / variables inside a class (ex; var $name) called 'properties'
+   function set_name($new_name){
+       $this->name=$new_name;
+   }
+   function get_name(){
+       return $this->name; //Don't forget in a class, variables are called 'properties' amd functions are called 'methods';
+   }
+   
+   
+   
+}
